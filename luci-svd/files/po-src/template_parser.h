@@ -30,9 +30,9 @@
 #include <ctype.h>
 #include <errno.h>
 
-#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
+#include "src/lua.h"
+#include "src/lualib.h"
+#include "src/lauxlib.h"
 
 
 /* code types */
