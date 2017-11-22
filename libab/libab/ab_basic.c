@@ -179,10 +179,12 @@ static int tapi_dev_start(ab_t *ab)
 #endif
    /* Stop TAPI*/
    status = ioctl(ab->devs[0].cfg_fd, IFX_TAPI_DEV_STOP, 0);
+/*
    if (status != AB_ERR_NO_ERR) {
       sprintf(ab_g_err_str, "ERROR - IFX_TAPI_DEV_STOP ioctl failed");
       return status;
    }
+*/
 
    status = tapi_dev_firmware_download(ab->devs[0].cfg_fd, TAPI_LL_DEV_FIRMWARE_NAME);
    if (status != AB_ERR_NO_ERR) {
@@ -299,10 +301,10 @@ static int tapi_dev_stop(ab_t *ab)
    
    
    /* Stop TAPI device*/
-   if (ioctl(ab->devs[0].cfg_fd, IFX_TAPI_DEV_STOP, 0) != AB_ERR_NO_ERR) {
+  if (ioctl(ab->devs[0].cfg_fd, IFX_TAPI_DEV_STOP, 0) != AB_ERR_NO_ERR) {
       sprintf(ab_g_err_str, "ERROR - IFX_TAPI_DEV_STOP ioctl failed");
       status = AB_ERR_UNKNOWN;
-   }
+   } 
 #if 0
    /* Close device FD*/
    close(f->dev_ctx.dev_fd);
