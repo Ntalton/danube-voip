@@ -179,12 +179,10 @@ static int tapi_dev_start(ab_t *ab)
 #endif
    /* Stop TAPI*/
    status = ioctl(ab->devs[0].cfg_fd, IFX_TAPI_DEV_STOP, 0);
-/*
    if (status != AB_ERR_NO_ERR) {
       sprintf(ab_g_err_str, "ERROR - IFX_TAPI_DEV_STOP ioctl failed");
       return status;
    }
-*/
 
    status = tapi_dev_firmware_download(ab->devs[0].cfg_fd, TAPI_LL_DEV_FIRMWARE_NAME);
    if (status != AB_ERR_NO_ERR) {
