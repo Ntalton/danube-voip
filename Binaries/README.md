@@ -1,1 +1,1 @@
-I have added some packages I have compiled on LEDE trunk r5242. Should work on LEDE 17.0.1, although untested.
+I have added some packages I have compiled on LEDE 17.04.1. Should work on LEDE trunk as well, your mileage may vary.
