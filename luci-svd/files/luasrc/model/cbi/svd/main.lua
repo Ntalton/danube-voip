@@ -50,12 +50,12 @@ end
 sip_tos=s:option(Value,"sip_tos", translate("Tos for sip traffic"))
 sip_tos.optional=false
 sip_tos.rmempty=false
-sip_tos.datatype="range(0,255)"
+--sip_tos.datatype="range(0,255)"
 
 rtp_tos=s:option(Value,"rtp_tos", translate("Tos for rtp traffic"))
 rtp_tos.optional=false
 rtp_tos.rmempty=false
-rtp_tos.datatype="range(0,255)"
+--rtp_tos.datatype="range(0,255)"
 
 led=s:option(ListValue,"led", translate("Voip led"), translate("Name of the led to activate when at least one account has been registered."))
 for k, v in ipairs(leds) do
