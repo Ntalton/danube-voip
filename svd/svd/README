@@ -86,6 +86,7 @@ options in config main
 	    option sip_tos 0x10
 	    option rtp_tos 0x10
 	    option led "soc:green:voip"
+	    option local_ip "192.168.0.254"
 
 options in config account
 -------------------------
