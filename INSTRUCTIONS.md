@@ -71,6 +71,12 @@ Various sections can be defined:
 > > optional - name of the led to use as the main voip led.
 > > If configured the led will turn on when there's at least one account successfully registered.
 
+  * option local_ip
+> > optional - in case there are multiple network interfaces, sofia sip
+> > doesn't always select the correct one for outgoing messages. In that
+> > case you can specify the ip address of the interface to use. WARNING
+> > since this is a global setting, there is no way to use different
+> >  interfaces for different accounts.
 
 > example:
 ```
@@ -81,6 +87,7 @@ Various sections can be defined:
 	    option sip_tos 0x10
 	    option rtp_tos 0x10
             option led "voice"
+	    option local_ip "192.168.0.254"
 ```
 
 ## options in config account ##
@@ -114,7 +121,7 @@ Various sections can be defined:
   * option codecs "codec1 codec2 codec3 ..."
 > > optional, list of codecs to use ordered by priority. If not defined, all
 > > codecs will be used in this order:
-> > PCMA, G729, G729E, G723, iLBC, G726-16, G726-32, G726-40
+> > G722, PCMA, G729, G729E, G723, iLBC, G726-16, G726-32, G726-40
 
   * option ring 'off on'
 > > optional, list of booleans. Decides which channel will ring for incoming
